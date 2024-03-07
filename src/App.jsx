@@ -8,11 +8,19 @@ function App() {
 
   function submitForm(e) {
     e.preventDefault();
-    const newEntry = { email: email, password: password }
-    setAllEntry([...allEntry, newEntry])
-    
-    setEmail("")
-    setPassword("")
+    if (email && password) {
+       const newEntry = {
+         id: new Date().getTime().toString(),
+         email: email,
+         password: password,
+       };
+       setAllEntry([...allEntry, newEntry]);
+
+       setEmail("");
+       setPassword("");  
+    } else {
+      alert("fill the form")
+    }
     
   }
 
@@ -51,12 +59,13 @@ function App() {
       </form>
       <div>
         {
-          allEntry.map((data) => {
+          allEntry.map((dataEle) => {
+            const {id, email, password} = dataEle;
             return (
               <>
-                <div key={data.id} className="data">
-                  <p>{data.email}</p>
-                  <p>{data.password}</p>
+                <div key={id} className="data">
+                  <p>{email}</p>
+                  <p>{password}</p>
                 </div>
               </>
             );
