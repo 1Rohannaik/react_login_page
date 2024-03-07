@@ -9,7 +9,10 @@ function App() {
   function submitForm(e) {
     e.preventDefault();
     const newEntry = { email: email, password: password }
-    setAllEntry(...allEntry,newEntry)
+    setAllEntry([...allEntry, newEntry])
+    
+    setEmail("")
+    setPassword("")
     
   }
 
@@ -34,7 +37,7 @@ function App() {
             <h3>password</h3>
             <label htmlFor="password"></label>
             <input
-              type="text"
+              type="password"
               id="password"
               name="password"
               placeholder="enter password"
@@ -46,6 +49,20 @@ function App() {
           <button className="btn">submit</button>
         </div>
       </form>
+      <div>
+        {
+          allEntry.map((data) => {
+            return (
+              <>
+                <div key={data.id} className="data">
+                  <p>{data.email}</p>
+                  <p>{data.password}</p>
+                </div>
+              </>
+            );
+          })
+        }
+      </div>
     </>
   );
 }

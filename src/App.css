@@ -55,7 +55,23 @@ h3{
   color: rgb(42, 81, 115);
   font-size: 18px;
   padding-top: 2px;
-
+}
+.data{
+  height: 50px;
+  width: 500px;
+ background: -moz-linear-gradient(90deg, rgba(197,121,199,1) 78%, rgba(148,187,233,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(197,121,199,1) 78%, rgba(148,187,233,1) 100%);
+background: linear-gradient(90deg, rgb(169, 128, 171) 78%, rgb(63, 96, 133) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c579c7",endColorstr="#94bbe9",GradientType=1);
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+  border-radius: 5px;
+  margin-top: 50px;
+  margin-left: 100px;
+  color: aliceblue;
 }
 
 
